@@ -1,0 +1,16 @@
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Code.deps.json
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Code.runtimeconfig.json
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Code.runtimeconfig.dev.json
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Code.dll
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Code.pdb
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Code.xml
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Core.Model.dll
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Core.Model.pdb
+D:\GitHub\Blog.Code\Blog.Code\bin\Debug\netcoreapp2.0\Blog.Core.Model.xml
+D:\GitHub\Blog.Code\Blog.Code\obj\Debug\netcoreapp2.0\Blog.Code.csprojAssemblyReference.cache
+D:\GitHub\Blog.Code\Blog.Code\obj\Debug\netcoreapp2.0\Blog.Code.csproj.CoreCompileInputs.cache
+D:\GitHub\Blog.Code\Blog.Code\obj\Debug\netcoreapp2.0\Blog.Code.AssemblyInfoInputs.cache
+D:\GitHub\Blog.Code\Blog.Code\obj\Debug\netcoreapp2.0\Blog.Code.AssemblyInfo.cs
+D:\GitHub\Blog.Code\Blog.Code\obj\Debug\netcoreapp2.0\Blog.Code.csproj.CopyComplete
+D:\GitHub\Blog.Code\Blog.Code\obj\Debug\netcoreapp2.0\Blog.Code.dll
+D:\GitHub\Blog.Code\Blog.Code\obj\Debug\netcoreapp2.0\Blog.Code.pdb
