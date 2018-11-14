@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Blog.Core.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Code.Controllers
@@ -10,7 +11,7 @@ namespace Blog.Code.Controllers
     /// <summary>
     /// ValuesController
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
     public class ValuesController : Controller
     {
         /// <summary>
@@ -18,7 +19,7 @@ namespace Blog.Code.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IEnumerable<string> Get(Love love)
+        public IEnumerable<string> Get(string name)
         {
             return new string[] { "value1", "value2" };
         }

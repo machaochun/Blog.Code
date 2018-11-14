@@ -4,12 +4,41 @@
         <name>Blog.Code</name>
     </assembly>
     <members>
+        <member name="T:Blog.Code.AuthHelper.OverWrite.JwtHelper">
+            <summary>
+            令牌类
+            </summary>
+        </member>
+        <member name="M:Blog.Code.AuthHelper.OverWrite.JwtHelper.IssueJWT(Blog.Core.Model.TokenModel)">
+            <summary>
+            获取JWT字符串
+            </summary>
+            <param name="tokenModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Code.AuthHelper.OverWrite.JwtHelper.SerializeJWT(System.String)">
+            <summary>
+            解析 jwt
+            </summary>
+            <param name="jwtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Code.AuthHelper.OverWrite.JwtTokenAuth">
+            <summary>
+            Token验证授权中间件
+            </summary>
+        </member>
+        <member name="T:Blog.Code.Controllers.LoginController">
+            <summary>
+            Login
+            </summary>
+        </member>
         <member name="T:Blog.Code.Controllers.ValuesController">
             <summary>
             ValuesController
             </summary>
         </member>
-        <member name="M:Blog.Code.Controllers.ValuesController.Get(Blog.Core.Model.Love)">
+        <member name="M:Blog.Code.Controllers.ValuesController.Get(System.String)">
             <summary>
             GET api/values
             </summary>

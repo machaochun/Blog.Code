@@ -4,20 +4,107 @@
         <name>Blog.Core.Model</name>
     </assembly>
     <members>
-        <member name="P:Blog.Core.Model.Love.Id">
+        <member name="P:Blog.Core.Model.TokenModel.Uid">
             <summary>
-            id
+            用户Id
             </summary>
         </member>
-        <member name="P:Blog.Core.Model.Love.Name">
+        <member name="P:Blog.Core.Model.TokenModel.Role">
             <summary>
-            姓名
+            角色
             </summary>
         </member>
-        <member name="P:Blog.Core.Model.Love.Age">
+        <member name="P:Blog.Core.Model.TokenModel.Work">
             <summary>
-            年龄
+            职能
             </summary>
+        </member>
+        <member name="T:Blog.Core.UtilConvert">
+            <summary>
+            类型转换
+            </summary>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToInt(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToInt(System.Object,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToMoney(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToMoney(System.Object,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToString(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToString(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToDecimal(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToDecimal(System.Object,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToDate(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToDate(System.Object,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.UtilConvert.ObjToBool(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
