@@ -15,6 +15,12 @@ namespace Blog.Code.Controllers
     [Route("api/[controller]")]
     public class LoginController : Controller
     {
+        /// <summary>
+        /// 登陆
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="sub"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("Token2")]
         public JsonResult GetJwtStr(long id = 1, string sub = "Admin")

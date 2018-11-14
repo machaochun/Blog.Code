@@ -7,4 +7,3 @@ D:\GitHub\Blog.Code\Blog.Core.Model\obj\Debug\netcoreapp2.0\Blog.Core.Model.Asse
 D:\GitHub\Blog.Code\Blog.Core.Model\obj\Debug\netcoreapp2.0\Blog.Core.Model.AssemblyInfo.cs
 D:\GitHub\Blog.Code\Blog.Core.Model\obj\Debug\netcoreapp2.0\Blog.Core.Model.dll
 D:\GitHub\Blog.Code\Blog.Core.Model\obj\Debug\netcoreapp2.0\Blog.Core.Model.pdb
-D:\GitHub\Blog.Code\Blog.Core.Model\obj\Debug\netcoreapp2.0\Blog.Core.Model.csprojAssemblyReference.cache

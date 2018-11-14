@@ -4,8 +4,14 @@ using System.Text;
 
 namespace Blog.Core.Model
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class TokenModel
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public TokenModel()
         {
             this.Uid = 0;

@@ -17,6 +17,9 @@ namespace Blog.Code.AuthHelper.OverWrite
     /// </summary>
     public class JwtHelper
     {
+        /// <summary>
+        /// secretKey
+        /// </summary>
         public static string secretKey { get; set; } = "sdfsdfsrty45634kkhllghtdgdfss345t678fs";
         /// <summary>
         /// 获取JWT字符串

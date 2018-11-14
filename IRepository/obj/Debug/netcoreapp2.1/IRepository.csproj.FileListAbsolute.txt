@@ -1,0 +1,8 @@
+D:\GitHub\Blog.Code\IRepository\bin\Debug\netcoreapp2.1\IRepository.deps.json
+D:\GitHub\Blog.Code\IRepository\bin\Debug\netcoreapp2.1\IRepository.dll
+D:\GitHub\Blog.Code\IRepository\bin\Debug\netcoreapp2.1\IRepository.pdb
+D:\GitHub\Blog.Code\IRepository\obj\Debug\netcoreapp2.1\IRepository.csproj.CoreCompileInputs.cache
+D:\GitHub\Blog.Code\IRepository\obj\Debug\netcoreapp2.1\IRepository.AssemblyInfoInputs.cache
+D:\GitHub\Blog.Code\IRepository\obj\Debug\netcoreapp2.1\IRepository.AssemblyInfo.cs
+D:\GitHub\Blog.Code\IRepository\obj\Debug\netcoreapp2.1\IRepository.dll
+D:\GitHub\Blog.Code\IRepository\obj\Debug\netcoreapp2.1\IRepository.pdb

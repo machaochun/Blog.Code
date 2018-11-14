@@ -4,6 +4,101 @@
         <name>Blog.Core.Model</name>
     </assembly>
     <members>
+        <member name="T:Blog.Core.Model.ErrorMassageStatic">
+            <summary>
+            系统错误码
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Model.MessageModel`1">
+            <summary>
+            通用返回信息类
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.MessageModel`1.Success">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.MessageModel`1.Msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.MessageModel`1.Data">
+            <summary>
+            返回数据集合
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Model.Models.Advertisement">
+            <summary>
+            广告类
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.Advertisement.Id">
+            <summary>
+            分类ID
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.Advertisement.Createdate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.Advertisement.ImgUrl">
+            <summary>
+            广告图片
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.Advertisement.Title">
+            <summary>
+            广告标题
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.Advertisement.Url">
+            <summary>
+            广告链接
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.Advertisement.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Model.TableModel`1">
+            <summary>
+            表格数据，支持分页
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.TableModel`1.Code">
+            <summary>
+            返回编码
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.TableModel`1.Msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.TableModel`1.Count">
+            <summary>
+            记录总数
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.TableModel`1.Data">
+            <summary>
+            返回数据集
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Model.TokenModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Model.TokenModel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Blog.Core.Model.TokenModel.Uid">
             <summary>
             用户Id
@@ -17,6 +112,41 @@
         <member name="P:Blog.Core.Model.TokenModel.Work">
             <summary>
             职能
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Model.ViewModels.AdvertisementViewModels">
+            <summary>
+            广告类
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.ViewModels.AdvertisementViewModels.Id">
+            <summary>
+            分类ID
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.ViewModels.AdvertisementViewModels.Createdate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.ViewModels.AdvertisementViewModels.ImgUrl">
+            <summary>
+            广告图片
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.ViewModels.AdvertisementViewModels.Title">
+            <summary>
+            广告标题
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.ViewModels.AdvertisementViewModels.Url">
+            <summary>
+            广告链接
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.ViewModels.AdvertisementViewModels.Remark">
+            <summary>
+            备注
             </summary>
         </member>
         <member name="T:Blog.Core.UtilConvert">

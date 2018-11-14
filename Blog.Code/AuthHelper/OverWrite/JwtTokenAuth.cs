@@ -15,12 +15,19 @@ namespace Blog.Code.AuthHelper.OverWrite
     {
 
         private readonly RequestDelegate _next;
-
+        /// <summary>
+        /// JwtTokenAuth
+        /// </summary>
+        /// <param name="next"></param>
         public JwtTokenAuth(RequestDelegate next)
         {
             _next = next;
         }
-
+        /// <summary>
+        /// 验证授权中间件
+        /// </summary>
+        /// <param name="httpContext"></param>
+        /// <returns></returns>
         public Task Invoke(HttpContext httpContext)
         {
             if (!httpContext.Request.Headers.ContainsKey("Authorization"))

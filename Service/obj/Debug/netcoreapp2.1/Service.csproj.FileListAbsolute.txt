@@ -1,0 +1,16 @@
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\Service.deps.json
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\Service.dll
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\Service.pdb
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\IRepository.dll
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\IService.dll
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\Repository.dll
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\IRepository.pdb
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\IService.pdb
+D:\GitHub\Blog.Code\Service\bin\Debug\netcoreapp2.1\Repository.pdb
+D:\GitHub\Blog.Code\Service\obj\Debug\netcoreapp2.1\Service.csprojAssemblyReference.cache
+D:\GitHub\Blog.Code\Service\obj\Debug\netcoreapp2.1\Service.csproj.CoreCompileInputs.cache
+D:\GitHub\Blog.Code\Service\obj\Debug\netcoreapp2.1\Service.AssemblyInfoInputs.cache
+D:\GitHub\Blog.Code\Service\obj\Debug\netcoreapp2.1\Service.AssemblyInfo.cs
+D:\GitHub\Blog.Code\Service\obj\Debug\netcoreapp2.1\Service.csproj.CopyComplete
+D:\GitHub\Blog.Code\Service\obj\Debug\netcoreapp2.1\Service.dll
+D:\GitHub\Blog.Code\Service\obj\Debug\netcoreapp2.1\Service.pdb
