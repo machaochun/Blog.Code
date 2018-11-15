@@ -6,6 +6,6 @@ namespace Repository.sugar
 {
     public class BaseDBConfig
     {
-        public static string ConnectionString = "server=.;uid=sa;pwd=sa;database=Sz123456";
+        public static string ConnectionString = "server=.;uid=sa;pwd=Sz123456;database=BlogCode";
     }
 }

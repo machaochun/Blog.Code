@@ -9,6 +9,11 @@
             系统错误码
             </summary>
         </member>
+        <member name="P:Blog.Core.Model.ErrorMassageStatic.DBConnectionStringIsNULLError">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Blog.Core.Model.MessageModel`1">
             <summary>
             通用返回信息类

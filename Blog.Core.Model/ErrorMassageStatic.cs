@@ -9,7 +9,9 @@ namespace Blog.Core.Model
     /// </summary>
     public class ErrorMassageStatic
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static string DBConnectionStringIsNULLError => "数据库连接字符串为空";
 
     }
