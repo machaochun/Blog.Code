@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Blog.Core.Model.Models;
 using IService;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Service;
 
 namespace Blog.Code.Controllers
 {
@@ -19,6 +14,16 @@ namespace Blog.Code.Controllers
   //  [Authorize(Policy ="Admin")]
     public class BlogController : Controller
     {
+
+        private IAdvertisementServices _advertisementServices;
+        /// <summary>
+        /// 构造方法注入
+        /// </summary>
+        /// <param name="advertisementServices"></param>
+        public BlogController(IAdvertisementServices advertisementServices)
+        {
+            _advertisementServices = advertisementServices;
+        }
         /// <summary>
         /// 获取和
         /// </summary>
@@ -27,9 +32,8 @@ namespace Blog.Code.Controllers
         /// <returns></returns>
         [HttpGet]
         public int GetSum(int i, int j)
-        {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
-            return advertisementServices.Sum(i,j);
+        { 
+            return _advertisementServices.Sum(i,j);
 
         }
         /// <summary>
@@ -38,19 +42,17 @@ namespace Blog.Code.Controllers
         /// <param name="id">广告ID</param>
         /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
-        public List<Advertisement> GetAdvertisementInfo(int id)
-        {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
-            return advertisementServices.Query(d => d.Id == id);
+        public async Task<List<Advertisement>> GetAdvertisementInfo(int id)
+        { 
+            return await _advertisementServices.Query(d => d.Id == id);
         }
         /// <summary>
         /// 创建表
         /// </summary>
         [HttpGet("aa")]
         public void CreateTableByEntity()
-        {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
-            advertisementServices.CreateTableByEntity();
+        { 
+            _advertisementServices.CreateTableByEntity();
 
         }
     }

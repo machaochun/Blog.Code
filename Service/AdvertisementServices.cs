@@ -1,43 +1,31 @@
 ﻿
 using IService;
 using IRepository;
-using Repository;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Blog.Core.Model.Models;
-using System.Linq.Expressions;
+using Service.BASE;
 
 namespace Service
 {
-    public class AdvertisementServices : IAdvertisementServices
+    public class AdvertisementServices :BaseServices<Advertisement>, IAdvertisementServices
     {
-        IAdvertisementRepository dal = new AdvertisementRepository();
-        ICreaeteTalbeRepository tal = new CreaeteTalbeRepository();
+
+
+        public IAdvertisementRepository _advertisementRepository;
+        public ICreaeteTalbeRepository _creaeteTalbeRepository;
+        public AdvertisementServices(IAdvertisementRepository advertisementRepository, ICreaeteTalbeRepository creaeteTalbeRepository)
+        {
+            _advertisementRepository = advertisementRepository;
+            _creaeteTalbeRepository = creaeteTalbeRepository;
+            base.baseDal = _advertisementRepository;
+        } 
         public int Sum(int i, int j)
         {
-            return dal.Sum(i, j);
-        } 
-        public int Add(Advertisement model)
-        {
-            return dal.Add(model);
-        } 
-        public bool Delete(Advertisement model)
-        {
-            return dal.Delete(model);
-        }
-        public bool Update(Advertisement model)
-        {
-            return dal.Update(model);
-        }
-        public List<Advertisement> Query(Expression<Func<Advertisement, bool>> whereExpression)
-        {
-            return dal.Query(whereExpression);
-        }
+            return _advertisementRepository.Sum(i, j);
+        }  
 
         public void CreateTableByEntity()
         {
-            tal.CreateTableByEntity();
+            _creaeteTalbeRepository.CreateTableByEntity();
         }
 
     }

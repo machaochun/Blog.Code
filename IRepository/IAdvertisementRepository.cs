@@ -1,11 +1,12 @@
 ﻿using Blog.Core.Model.Models;
+using IRepository.BASE;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace IRepository
 {
-    public interface IAdvertisementRepository
+    public interface IAdvertisementRepository : IBaseRepository<Advertisement>
     {
         /// <summary>
         /// 求和
@@ -14,10 +15,6 @@ namespace IRepository
         /// <param name="j"></param>
         /// <returns></returns>
         int Sum(int i, int j);
-
-        int Add(Advertisement model);
-        bool Delete(Advertisement model);
-        bool Update(Advertisement model);
-        List<Advertisement> Query(Expression<Func<Advertisement, bool>> whereExpression); 
+         
     }
 }

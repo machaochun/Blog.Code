@@ -1,0 +1,13 @@
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.1\Common.deps.json
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.1\Common.dll
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.1\Common.pdb
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.dll
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.Json.dll
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.xml
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.Json.xml
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.csproj.CoreCompileInputs.cache
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfoInputs.cache
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfo.cs
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.csproj.CopyComplete
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.dll
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.pdb

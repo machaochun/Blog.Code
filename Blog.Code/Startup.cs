@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Blog.Code.AuthHelper.OverWrite;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -41,9 +39,11 @@ namespace Blog.Code
         /// 中间件注入
         /// </summary>
         /// <param name="services"></param>
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+          //  BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServiceConnection").Value;
 
             #region  Swagger 
             services.AddSwaggerGen(c =>
@@ -106,6 +106,32 @@ namespace Blog.Code
             });
 
             #endregion
+
+            #region AutoFac
+            //实例化 AutoFac 容器
+            var builder = new ContainerBuilder();
+            //注册要通过反射创建的组建
+            //builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
+            //  var assemblysService = Assembly.Load("Service");
+            var basePath1 = PlatformServices.Default.Application.ApplicationBasePath;//获取项目路径
+            var serviceDllFile = Path.Combine(basePath1, "Service.dll");//获取注入项目绝对路径
+            var assemblysService = Assembly.LoadFile(serviceDllFile);
+            //指定已扫描程序集中的类型注册为提供所有其实现的接口。
+            builder.RegisterAssemblyTypes(assemblysService).AsImplementedInterfaces();
+
+            var repositoryDllFile = Path.Combine(basePath1, "Repository.dll");//获取注入项目绝对路径
+            var assemblysRepository = Assembly.LoadFile(repositoryDllFile);
+
+            //var assemblysRepository = Assembly.Load("Repository");
+            builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
+
+            //将services 填充 Autofac 容器生成器
+            builder.Populate(services);
+            //使用已进行的组件登记创建新容器
+            var ApplicationContainer = builder.Build();
+            #endregion
+            // 第三方IOC 接管 core内置DI容器
+            return new AutofacServiceProvider(ApplicationContainer);
         }
 
 
