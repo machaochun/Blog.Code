@@ -11,3 +11,4 @@ D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfo.cs
 D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.csproj.CopyComplete
 D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.dll
 D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.pdb
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.1\Common.csprojAssemblyReference.cache

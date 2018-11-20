@@ -16,13 +16,16 @@ namespace Blog.Code.Controllers
     {
 
         private IAdvertisementServices _advertisementServices;
+        private IBlogArticleServices _blogArticleServices;
         /// <summary>
         /// 构造方法注入
         /// </summary>
         /// <param name="advertisementServices"></param>
-        public BlogController(IAdvertisementServices advertisementServices)
+        /// <param name="blogArticleServices"></param>
+        public BlogController(IAdvertisementServices advertisementServices, IBlogArticleServices blogArticleServices)
         {
             _advertisementServices = advertisementServices;
+            _blogArticleServices = blogArticleServices;
         }
         /// <summary>
         /// 获取和
@@ -54,6 +57,17 @@ namespace Blog.Code.Controllers
         { 
             _advertisementServices.CreateTableByEntity();
 
+        }
+
+        /// <summary>
+        /// 获取博客列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetBlogs")]
+        public async Task<List<BlogArticle>> GetBlogs()
+        {
+            return await _blogArticleServices.getBlogs();
         }
     }
 }

@@ -4,6 +4,8 @@ using System.IO;
 using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Autofac.Extras.DynamicProxy;
+using Blog.Code.AOP;
 using Blog.Code.AuthHelper.OverWrite;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,7 +45,10 @@ namespace Blog.Code
         {
             services.AddMvc();
 
-          //  BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServiceConnection").Value;
+            //将 TService 中指定的类型的范围服务添加到实现
+            services.AddScoped<ICaching, MemoryCaching>();//记得把缓存注入！！！
+
+            //  BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServiceConnection").Value;
 
             #region  Swagger 
             services.AddSwaggerGen(c =>
@@ -82,7 +87,7 @@ namespace Blog.Code
                 {
                     Description = "JWT授权（数据将在请求头中进行传输）直接在下框中输入{token}\"",
                     Name = "Authorization",//jwt默认的参数名称
-                    In="header",//jwt默认存放Authorization信息的位置（请求头中）
+                    In = "header",//jwt默认存放Authorization信息的位置（请求头中）
                     Type = "apiKey"
                 });
                 #endregion
@@ -110,6 +115,10 @@ namespace Blog.Code
             #region AutoFac
             //实例化 AutoFac 容器
             var builder = new ContainerBuilder();
+
+            //可以直接替换其他拦截器！一定要把拦截器进行注册
+            builder.RegisterType<BlogCacheAOP>();
+
             //注册要通过反射创建的组建
             //builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
             //  var assemblysService = Assembly.Load("Service");
@@ -123,7 +132,11 @@ namespace Blog.Code
             var assemblysRepository = Assembly.LoadFile(repositoryDllFile);
 
             //var assemblysRepository = Assembly.Load("Repository");
-            builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(assemblysRepository)
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope()
+                .EnableInterfaceInterceptors()//对目标类型启用接口拦截
+                .InterceptedBy(typeof(BlogCacheAOP));//可以直接替换拦截器
 
             //将services 填充 Autofac 容器生成器
             builder.Populate(services);

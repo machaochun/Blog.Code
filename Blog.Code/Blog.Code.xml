@@ -4,6 +4,38 @@
         <name>Blog.Code</name>
     </assembly>
     <members>
+        <member name="T:Blog.Code.AOP.BlogCacheAOP">
+            <summary>
+            面向切面的缓存使用
+            </summary>
+        </member>
+        <member name="T:Blog.Code.AOP.BlogLogAOP">
+            <summary>
+            拦截器BlogLogAOP 继承IInterceptor接口
+            </summary>
+        </member>
+        <member name="M:Blog.Code.AOP.BlogLogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            实例化IInterceptor唯一方法 
+            </summary>
+            <param name="invocation">包含被拦截方法的信息</param>
+        </member>
+        <member name="T:Blog.Code.AOP.ICaching">
+            <summary>
+            简单的缓存接口，只有查询和添加，以后会进行扩展
+            </summary>
+        </member>
+        <member name="T:Blog.Code.AOP.MemoryCaching">
+            <summary>
+            实例化缓存接口ICaching
+            </summary>
+        </member>
+        <member name="M:Blog.Code.AOP.MemoryCaching.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            通过构造方法获取
+            </summary>
+            <param name="cache"></param>
+        </member>
         <member name="T:Blog.Code.AuthHelper.OverWrite.JwtHelper">
             <summary>
             令牌类
@@ -51,11 +83,12 @@
             Blog控制器
             </summary>
         </member>
-        <member name="M:Blog.Code.Controllers.BlogController.#ctor(IService.IAdvertisementServices)">
+        <member name="M:Blog.Code.Controllers.BlogController.#ctor(IService.IAdvertisementServices,IService.IBlogArticleServices)">
             <summary>
             构造方法注入
             </summary>
             <param name="advertisementServices"></param>
+            <param name="blogArticleServices"></param>
         </member>
         <member name="M:Blog.Code.Controllers.BlogController.GetSum(System.Int32,System.Int32)">
             <summary>
@@ -76,6 +109,12 @@
             <summary>
             创建表
             </summary>
+        </member>
+        <member name="M:Blog.Code.Controllers.BlogController.GetBlogs">
+            <summary>
+            获取博客列表
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Blog.Code.Controllers.LoginController">
             <summary>

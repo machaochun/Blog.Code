@@ -69,6 +69,57 @@
             备注
             </summary>
         </member>
+        <!-- 对于成员“T:Blog.Core.Model.Models.BlogArticle”忽略有格式错误的 XML 注释 -->
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bsubmitter">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.btitle">
+            <summary>
+            博客标题
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bcategory">
+            <summary>
+            类别
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bcontent">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.btraffic">
+            <summary>
+            访问量
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bcommentNum">
+            <summary>
+            评论数量
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bUpdateTime">
+            <summary> 
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bCreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Model.Models.BlogArticle.bRemark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Blog.Core.Model.TableModel`1">
             <summary>
             表格数据，支持分页

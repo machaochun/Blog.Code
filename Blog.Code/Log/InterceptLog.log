@@ -1,0 +1,2 @@
+20181120 22:15:24 当前执行方法：Query 参数是： a => (a.bID > 0), a => Convert(a.bID, Object), True 
+方法执行完毕，返回结果：System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Blog.Core.Model.Models.BlogArticle]]
