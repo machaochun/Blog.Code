@@ -10,8 +10,17 @@ namespace Blog.Code.AOP
     /// </summary>
     public interface ICaching
     {
+        /// <summary>
+        /// get
+        /// </summary>
+        /// <param name="cacheKey"></param>
+        /// <returns></returns>
         object Get(string cacheKey);
-
+        /// <summary>
+        /// set
+        /// </summary>
+        /// <param name="cacheKey"></param>
+        /// <param name="cacheValue"></param>
         void Set(string cacheKey, object cacheValue);
     }
 }

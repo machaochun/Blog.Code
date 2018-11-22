@@ -1,4 +1,5 @@
 ﻿using Blog.Core.Model.Models;
+using Common;
 using IRepository;
 using IService;
 using Service.BASE;
@@ -19,8 +20,14 @@ namespace Service
             base.baseDal = blogArticleRepository;
             _blogArticleRepository = blogArticleRepository;
         }
+        /// <summary>
+        /// 获取博客列表
+        /// </summary>
+        /// <returns></returns>
+      //  [Caching(AbsoluteExpiration =10)]//增加特性
         public async Task<List<BlogArticle>> getBlogs()
         {
+            var connect = Appsettings.app(new string[] { "AppSettings", "RedisCaching", "ConnectionString" });
             var bloglist = await _blogArticleRepository.Query(a => a.bID > 0, a => a.bID);
             return bloglist;
         }

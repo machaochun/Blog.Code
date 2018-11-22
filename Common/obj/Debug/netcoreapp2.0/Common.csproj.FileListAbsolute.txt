@@ -1,0 +1,8 @@
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.0\Common.deps.json
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.0\Common.dll
+D:\GitHub\Blog.Code\Common\bin\Debug\netcoreapp2.0\Common.pdb
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.0\Common.dll
+D:\GitHub\Blog.Code\Common\obj\Debug\netcoreapp2.0\Common.pdb

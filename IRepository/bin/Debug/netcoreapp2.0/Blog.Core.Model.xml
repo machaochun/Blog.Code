@@ -69,7 +69,11 @@
             备注
             </summary>
         </member>
-        <!-- 对于成员“T:Blog.Core.Model.Models.BlogArticle”忽略有格式错误的 XML 注释 -->
+        <member name="T:Blog.Core.Model.Models.BlogArticle">
+            <summary>
+            博客文章
+            </summary>
+        </member>
         <member name="P:Blog.Core.Model.Models.BlogArticle.bID">
             <summary>
             

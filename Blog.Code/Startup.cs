@@ -126,17 +126,18 @@ namespace Blog.Code
             var serviceDllFile = Path.Combine(basePath1, "Service.dll");//获取注入项目绝对路径
             var assemblysService = Assembly.LoadFile(serviceDllFile);
             //指定已扫描程序集中的类型注册为提供所有其实现的接口。
-            builder.RegisterAssemblyTypes(assemblysService).AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(assemblysService).AsImplementedInterfaces()
+                .InstancePerLifetimeScope()
+                .EnableInterfaceInterceptors()//对目标类型启用接口拦截
+                .InterceptedBy(typeof(BlogCacheAOP));//可以直接替换拦截器
 
             var repositoryDllFile = Path.Combine(basePath1, "Repository.dll");//获取注入项目绝对路径
             var assemblysRepository = Assembly.LoadFile(repositoryDllFile);
 
             //var assemblysRepository = Assembly.Load("Repository");
             builder.RegisterAssemblyTypes(assemblysRepository)
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope()
-                .EnableInterfaceInterceptors()//对目标类型启用接口拦截
-                .InterceptedBy(typeof(BlogCacheAOP));//可以直接替换拦截器
+                .AsImplementedInterfaces();
+
 
             //将services 填充 Autofac 容器生成器
             builder.Populate(services);
