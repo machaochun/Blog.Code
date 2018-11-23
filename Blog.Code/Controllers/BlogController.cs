@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Blog.Core.Model.Models;
+using Common.Redis;
 using IService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,15 +19,18 @@ namespace Blog.Code.Controllers
 
         private IAdvertisementServices _advertisementServices;
         private IBlogArticleServices _blogArticleServices;
+        private IRedisCacheManager _redisCacheManager;
         /// <summary>
         /// 构造方法注入
         /// </summary>
         /// <param name="advertisementServices"></param>
         /// <param name="blogArticleServices"></param>
-        public BlogController(IAdvertisementServices advertisementServices, IBlogArticleServices blogArticleServices)
+        /// <param name="redisCacheManager"></param>
+        public BlogController(IAdvertisementServices advertisementServices, IBlogArticleServices blogArticleServices, IRedisCacheManager redisCacheManager)
         {
             _advertisementServices = advertisementServices;
             _blogArticleServices = blogArticleServices;
+            _redisCacheManager = redisCacheManager;
         }
         /// <summary>
         /// 获取和
@@ -67,7 +72,20 @@ namespace Blog.Code.Controllers
         [Route("GetBlogs")]
         public async Task<List<BlogArticle>> GetBlogs()
         {
-            return await _blogArticleServices.getBlogs();
+
+            List<BlogArticle> blogArticleList = new List<BlogArticle>();
+
+            if (_redisCacheManager.Get<object>("Redis.Blog") != null)
+            {
+                blogArticleList = _redisCacheManager.Get<List<BlogArticle>>("Redis.Blog");
+            }
+            else
+            {
+                blogArticleList= await _blogArticleServices.Query(d => d.bID == 1);
+                _redisCacheManager.Set("Redis.Blog", blogArticleList, TimeSpan.FromHours(2));
+
+            }
+            return blogArticleList;            
         }
     }
 }

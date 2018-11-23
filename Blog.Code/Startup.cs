@@ -7,6 +7,7 @@ using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
 using Blog.Code.AOP;
 using Blog.Code.AuthHelper.OverWrite;
+using Common.Redis;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Caching.Memory;
@@ -45,6 +46,8 @@ namespace Blog.Code
         {
             services.AddMvc();
 
+            // redis 注入
+            services.AddScoped<IRedisCacheManager, RedisCacheManager>();
             //将 TService 中指定的类型的范围服务添加到实现
             services.AddScoped<ICaching, MemoryCaching>();//记得把缓存注入！！！
 

@@ -27,7 +27,7 @@ namespace Service
       //  [Caching(AbsoluteExpiration =10)]//增加特性
         public async Task<List<BlogArticle>> getBlogs()
         {
-            var connect = Appsettings.app(new string[] { "AppSettings", "RedisCaching", "ConnectionString" });
+      //      var connect = Appsettings.app(new string[] { "AppSettings", "RedisCaching", "ConnectionString" });
             var bloglist = await _blogArticleRepository.Query(a => a.bID > 0, a => a.bID);
             return bloglist;
         }
