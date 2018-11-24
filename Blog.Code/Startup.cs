@@ -53,6 +53,34 @@ namespace Blog.Code
 
             //  BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServiceConnection").Value;
 
+            #region Cors
+
+            services.AddCors(c =>
+            {
+                //c.AddPolicy("AllRequests", policy =>
+                //{
+                //    policy
+                //    .AllowAnyOrigin()//允许任何源
+                //    .AllowAnyMethod()//允许任何方式
+                //    .AllowAnyHeader()//允许任何头
+                //    .AllowCredentials();//允许cookie
+                //});
+
+                //↑↑↑↑↑↑↑注意正式环境不要使用这种全开放的处理↑↑↑↑↑↑↑↑↑↑
+
+
+                //一般采用这种方法
+                c.AddPolicy("LimitRequests", policy =>
+                {
+                    policy
+                    .WithOrigins("http://localhost:8020", "http://blog.core.xxx.com", "")//支持多个域名端口
+                    .WithMethods("GET", "POST", "PUT", "DELETE")//请求方法添加到策略
+                    .WithHeaders("authorization");//标头添加到策略
+                });
+            });
+
+            #endregion
+
             #region  Swagger 
             services.AddSwaggerGen(c =>
             {
@@ -147,6 +175,8 @@ namespace Blog.Code
             //使用已进行的组件登记创建新容器
             var ApplicationContainer = builder.Build();
             #endregion
+
+      
             // 第三方IOC 接管 core内置DI容器
             return new AutofacServiceProvider(ApplicationContainer);
         }
@@ -178,8 +208,9 @@ namespace Blog.Code
             }
 
             app.UseMiddleware<JwtTokenAuth>();
-
-
+            // 将 cors  中间件添加到web 应用程序管线中
+            //以允许跨域请求。不加也可以.官方建议加上
+            app.UseCors("LimitRequests");
             app.UseMvc();
         }
     }

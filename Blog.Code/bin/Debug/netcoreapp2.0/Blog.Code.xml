@@ -75,6 +75,25 @@
             <param name="cacheKey"></param>
             <param name="cacheValue"></param>
         </member>
+        <member name="T:Blog.Code.AuthHelper.BlogCoreToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Code.AuthHelper.BlogCoreToken.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Code.AuthHelper.BlogCoreToken.IssueJWT(Blog.Core.Model.TokenModel,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            获取JWT字符串并存入缓存
+            </summary>
+            <param name="tokenModel"></param>
+            <param name="expiresSliding"></param>
+            <param name="expiresAbsoulte"></param>
+            <returns></returns>
+        </member>
         <member name="T:Blog.Code.AuthHelper.OverWrite.JwtHelper">
             <summary>
             令牌类
@@ -117,6 +136,40 @@
             <param name="httpContext"></param>
             <returns></returns>
         </member>
+        <member name="T:Blog.Code.AuthHelper.RayPIMemoryCache">
+            <summary>
+            RayPIMemoryCache
+            </summary>
+        </member>
+        <member name="F:Blog.Code.AuthHelper.RayPIMemoryCache._cache">
+            <summary>
+            MemoryCache
+            </summary>
+        </member>
+        <member name="M:Blog.Code.AuthHelper.RayPIMemoryCache.Exists(System.String)">
+            <summary>
+            验证缓存项是否存在
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Code.AuthHelper.RayPIMemoryCache.Get(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Code.AuthHelper.RayPIMemoryCache.AddMemoryCache(System.String,System.Object,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiresSliding">滑动过期时长（如果在过期时间内有操作，则以当前时间点延长过期时间）</param>
+            <param name="expiressAbsoulte">绝对过期时长</param>
+            <returns></returns>
+        </member>
         <member name="T:Blog.Code.Controllers.BlogController">
             <summary>
             Blog控制器
@@ -156,6 +209,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Blog.Code.Controllers.BlogController.GetBlogDetailsAsync(System.Int32)">
+            <summary>
+            获取视图博客详情信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:Blog.Code.Controllers.LoginController">
             <summary>
             Login
@@ -168,6 +228,26 @@
             <param name="id"></param>
             <param name="sub"></param>
             <returns></returns>
+        </member>
+        <member name="M:Blog.Code.Controllers.LoginController.GetJWTStr(System.Int64,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取JWT，并存入缓存
+            </summary>
+            <param name="id">用户Id</param>
+            <param name="sub">身份</param>
+            <param name="expiresSliding">相对过期时间，单位为分</param>
+            <param name="expiresAbsoulute">绝对过期时间，单位为天</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Code.Controllers.LoginController.Getjsonp(System.String,System.Int64,System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="callBack"></param>
+            <param name="id"></param>
+            <param name="sub"></param>
+            <param name="expiresSliding"></param>
+            <param name="expiresAbsoulute"></param>
         </member>
         <member name="T:Blog.Code.Program">
             <summary>

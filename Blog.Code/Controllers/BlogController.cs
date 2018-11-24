@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Blog.Core.Model.Models;
+using Blog.Core.Model.ViewModels;
 using Common.Redis;
 using IService;
 using Microsoft.AspNetCore.Mvc;
@@ -86,6 +87,17 @@ namespace Blog.Code.Controllers
 
             }
             return blogArticleList;            
+        }
+        /// <summary>
+        /// 获取视图博客详情信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetBlogDetailsAsync")]
+        public async Task<BlogViewModels> GetBlogDetailsAsync(int id)
+        {
+            return await _blogArticleServices.GetBlogDetailsAsync(id);
         }
     }
 }

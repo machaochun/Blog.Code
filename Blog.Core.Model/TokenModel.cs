@@ -28,7 +28,14 @@ namespace Blog.Core.Model
         /// 职能
         /// </summary>
         public string Work { get; set; }
-       
+        /// <summary>
+        /// name
+        /// </summary>
+        public string Uname { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Sub { get; set; }
     }
 }

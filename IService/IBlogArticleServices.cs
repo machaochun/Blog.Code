@@ -1,4 +1,5 @@
 ﻿using Blog.Core.Model.Models;
+using Blog.Core.Model.ViewModels;
 using IService.BASE;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace IService
 {
     public interface IBlogArticleServices:IBaseServices<BlogArticle>
     {
-        Task<List<BlogArticle>> getBlogs(); 
+        Task<List<BlogArticle>> getBlogs();
+
+        Task<BlogViewModels> GetBlogDetailsAsync(int id);
     }
 }
